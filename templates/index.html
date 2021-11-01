@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'bar' %}" method='POST'>
+     {% csrf_token %}
+  <label >choose a PowerTrain:</label><br>
+  <select name="cars" id="cars">
+    <option  selected>choose</option>
+  <option value="RWD">RWD</option>
+  <option value="AWD">AWD</option>
+   <option value="FWD">FWD</option>
+</select><br>
+    <button  type="submit" class="btn btn-primary btn-sm" >submit</button>
+</form>
+</body>
+</html>

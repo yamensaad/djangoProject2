@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'line' %}" method='POST'>
+     {% csrf_token %}
+  <label >choose a BodyStyle:</label><br>
+  <select name="bodies" id="cars">
+    <option  selected>choose</option>
+  <option value="SPV">SPV</option>
+  <option value="Liftback">Liftback</option>
+   <option value="SUV">SUV</option>
+   <option value="Sedan">Sedan</option>
+   <option value="Pickup">Pickup</option>
+   <option value="Cabrio">Cabrio</option>
+   <option value="Hatchback">Hatchback</option>
+</select><br>
+    <button  type="submit" class="btn btn-primary btn-sm" >submit</button>
+</form>
+</body>
+</html>
