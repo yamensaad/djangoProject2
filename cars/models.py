@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-
+##add cars model
 class Cars( models.Model ):
     Brand = models.TextField( "Brand", max_length=500 )
     Model = models.CharField( "Model", max_length=500 )
