@@ -55,6 +55,7 @@ def pie_chart(request):
     labels = []
     data = []
     price = request.POST['price']
+    print( price )
     queryset = models.Cars.objects.filter( PriceEuro__gte=price )
     for car in queryset:
         labels.append( car.Brand )
@@ -63,4 +64,6 @@ def pie_chart(request):
     return render( request, 'pie.html', {
         'labels': labels,
         'data': data,
+
+
     } )
