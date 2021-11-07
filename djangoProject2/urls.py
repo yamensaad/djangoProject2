@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from cars import views
 
-urlpatterns = [
+urlpatterns =  [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('index', views.bar_show),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('bar', views.bar, name='bar'),
     path('line', views.line, name='line'),
     path('line_plot', views.line_plot, name='line'),
+    path('display', views.display ),
 ]
 
