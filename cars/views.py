@@ -43,10 +43,19 @@ def bar(request):
     } )
 
 
+def display(request):
+    return render( request, 'display.html' )
+
+
+def pie_display(request):
+    return render( request, 'pie_display.html' )
+
+
 def pie_chart(request):
     labels = []
     data = []
-    queryset = models.Cars.objects.order_by( 'Brand', '-PriceEuro' ).distinct( 'Brand' )[:10]
+    price = request.POST['price']
+    queryset = models.Cars.objects.filter( PriceEuro__gte=price )
     for car in queryset:
         labels.append( car.Brand )
         data.append( car.PriceEuro )
@@ -55,7 +64,3 @@ def pie_chart(request):
         'labels': labels,
         'data': data,
     } )
-
-
-def display(request):
-    return render(request, 'display.html' )
