@@ -1,20 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a style="background-color: green" href="/" class="btn btn-info navbar-brand" role="button">Home</a>
+    <a id="div" style="background-color: green; margin: 12px" href="/display"  class="btn btn-info navbar-brand" role="button">Back</a>
+
+</nav>
 <form action="{% url 'bar' %}" method='POST'>
      {% csrf_token %}
-  <label >choose a PowerTrain:</label><br>
-  <select name="cars" id="cars">
-    <option  selected>choose</option>
+ <div class="container">
+      <div class="select-box">  <select name="cars" id="cars">
+    <option  selected>choose power train :</option>
   <option value="RWD">RWD</option>
   <option value="AWD">AWD</option>
    <option value="FWD">FWD</option>
 </select><br>
+          <br>
     <button  type="submit" class="btn btn-primary btn-sm" >submit</button>
+   </div>
+ </div>
 </form>
 </body>
 </html>
