@@ -16,13 +16,13 @@ def line(request):
 
 
 def line_plot(request):
-    body =  request.POST['bodies']
+    body = request.POST['bodies']
     labels = []
     data = []
-    queryset = models.Cars.objects.filter(BodyStyle=body).all()
+    queryset = models.Cars.objects.filter( BodyStyle=body ).all()
     for car in queryset:
-        labels.append( car.Brand ) # x axis
-        data.append( car.PriceEuro ) # y axis
+        labels.append( car.Brand )  # x axis
+        data.append( car.PriceEuro )  # y axis
     return render( request, 'line_plot.html', {
         'labels': labels,
         'data': data,
@@ -55,3 +55,7 @@ def pie_chart(request):
         'labels': labels,
         'data': data,
     } )
+
+
+def display(request):
+    return render(request, 'display.html' )
