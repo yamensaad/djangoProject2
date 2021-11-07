@@ -21,10 +21,11 @@ urlpatterns =  [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('index', views.bar_show),
-    path('pie', views.pie_chart),
+    path('pie', views.pie_chart, name='pie'),
     path('bar', views.bar, name='bar'),
     path('line', views.line, name='line'),
     path('line_plot', views.line_plot, name='line'),
     path('display', views.display ),
+    path('pie_display', views.pie_display ),
 ]
 
