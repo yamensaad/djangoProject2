@@ -27,5 +27,10 @@ urlpatterns =  [
     path('line_plot', views.line_plot, name='line'),
     path('display', views.display ),
     path('pie_display', views.pie_display ),
+    path('pie1' , views.pie_chart1),
+    path('line_plot1' , views.line_chart1),
+    path( 'bar1', views.bar1 ),
+
+
 ]
 
