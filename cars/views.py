@@ -65,5 +65,51 @@ def pie_chart(request):
         'labels': labels,
         'data': data,
 
+    } )
+
+
+def pie_chart1(request):
+    labels = []
+    data = []
+    queryset = models.Cars.objects.order_by( 'Brand', '-TopSpeed_KmH' ).distinct( 'Brand' )[:10]
+    for car in queryset:
+        labels.append( car.Brand )
+        data.append( car.TopSpeed_KmH )
+
+    return render( request, 'pie1.html', {
+        'labels': labels,
+        'data': data,
 
     } )
+
+
+def line_chart1(request):
+    labels = []
+    data = []
+    queryset = models.Cars.objects.order_by( 'Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
+    for car in queryset:
+        labels.append( car.Brand )
+        data.append( car.Efficiency_WhKm )
+
+    return render( request, 'line_plot1.html', {
+        'labels': labels,
+        'data': data,
+
+    } )
+
+
+def bar1(request):
+    labels = []
+    data = []
+    queryset = models.Cars.objects.order_by( 'Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
+    for car in queryset:
+        labels.append( car.Brand )
+        data.append( car.Efficiency_WhKm )
+
+    return render( request, 'bar1.html', {
+        'labels': labels,
+        'data': data,
+
+    } )
+
+
