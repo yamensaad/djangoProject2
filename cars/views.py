@@ -103,8 +103,8 @@ def bar1(request):
     data = []
     queryset = models.Cars.objects.order_by( 'Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
     for car in queryset:
-        labels.append( car.Brand )
-        data.append( car.Efficiency_WhKm )
+        labels.append(car.Brand )
+        data.append(car.Range_Km)
 
     return render( request, 'bar1.html', {
         'labels': labels,

@@ -6,6 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
+     body{
+        margin-left: 15px;
+    }
     #div{
          margin-top: 10px;
         margin-left: 10px;
@@ -13,11 +16,10 @@
 </style>
 </head>
 <body>
-<h1 class="text-center"></h1>
 <a id="div" style="background-color: green" href="/"  class="btn btn-info pull-right" role="button">Back</a>
 
 <div id="container" style="width: 75%;">
-    <canvas id="pie-chart"></canvas>
+    <canvas id="line-chart"></canvas>
   </div>
 
 
@@ -29,7 +31,7 @@
         datasets: [{
           data: {{ data|safe }},
           backgroundColor: [
-            '#40ff00', '#ff0000', '#ff8000', '#0000ff', '#D3D3D3'
+            '#40ff00', '#ff0000', '#ff8000', '#0000ff', '#D3D3D3' ,'#ff8000' ,'#66b3ff' ,'#afb3b6', '#000d1a'
           ],
           label: 'Selling_Price'
         }],
@@ -41,7 +43,7 @@
     };
 
     window.onload = function() {
-      var ctx = document.getElementById('pie-chart').getContext('2d');
+      var ctx = document.getElementById('line-chart').getContext('2d');
       window.myPie = new Chart(ctx, config);
     };
 
