@@ -86,7 +86,7 @@ def pie_chart1(request):
 def line_chart1(request):
     labels = []
     data = []
-    queryset = models.Cars.objects.order_by( 'Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
+    queryset = models.Cars.objects.order_by( '-Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
     for car in queryset:
         labels.append( car.Brand )
         data.append( car.Efficiency_WhKm )
@@ -101,10 +101,10 @@ def line_chart1(request):
 def bar1(request):
     labels = []
     data = []
-    queryset = models.Cars.objects.order_by( 'Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
+    queryset = models.Cars.objects.order_by( '-Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
     for car in queryset:
         labels.append(car.Brand )
-        data.append(car.Range_Km)
+        data.append(car.Efficiency_WhKm)
 
     return render( request, 'bar1.html', {
         'labels': labels,
