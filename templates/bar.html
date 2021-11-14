@@ -34,7 +34,7 @@
           backgroundColor: [
             '#40ff00', '#ff0000', '#ff8000', '#0000ff', '#D3D3D3' ,'#ff8000' ,'#66b3ff' ,'#afb3b6', '#000d1a'
           ],
-          label: 'Selling_Price'
+          label: 'selling cars based on power train :' + '{{ power_train|safe }}'
         }],
         labels: {{ labels|safe }}
       },
@@ -46,6 +46,7 @@
     window.onload = function() {
       var ctx = document.getElementById('bar-chart').getContext('2d');
       window.myPie = new Chart(ctx, config);
+
     };
 
   </script>

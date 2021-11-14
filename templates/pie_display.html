@@ -12,12 +12,13 @@
     <a style="background-color: green" href="/" class="btn btn-info navbar-brand" role="button">Home</a>
     <a id="div" style="background-color: green; margin: 12px" href="/display"  class="btn btn-info navbar-brand" role="button">Back</a>
 
+
 </nav>
 <form action="{% url 'pie' %}" method='POST'>
      {% csrf_token %}
- <div class="container">
-      <div class="select-box">  <select name="price" id="cars">
-    <option  selected>choose price in euro :</option>
+ <div   class="container">
+      <div  class="select-box">  <select  name="price" id="cars">
+    <option selected>choose price in euro :</option>
   <option value="2000"> >= 50000</option>
   <option value="50000">>= 100000</option>
 

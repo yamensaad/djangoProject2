@@ -23,7 +23,7 @@ urlpatterns =  [
     path('index', views.bar_show),
     path('pie', views.pie_chart, name='pie'),
     path('bar', views.bar, name='bar'),
-    path('line', views.line, name='line'),
+    path('line', views.line, name='line1'),
     path('line_plot', views.line_plot, name='line'),
     path('display', views.display ),
     path('pie_display', views.pie_display ),

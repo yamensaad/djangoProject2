@@ -19,13 +19,14 @@ def line_plot(request):
     body = request.POST['bodies']
     labels = []
     data = []
-    queryset = models.Cars.objects.filter( BodyStyle=body ).all()
-    for car in queryset:
+    query = models.Cars.objects.filter( BodyStyle=body ).all() #choose from the Bodystlye where it's = Body
+    for car in query:
         labels.append( car.Brand )  # x axis
         data.append( car.PriceEuro )  # y axis
     return render( request, 'line_plot.html', {
         'labels': labels,
         'data': data,
+        'body': body,
     } )
 
 
@@ -40,6 +41,7 @@ def bar(request):
     return render( request, 'bar.html', {
         'labels': labels,
         'data': data,
+        'power_train': power_train,
     } )
 
 
@@ -55,7 +57,6 @@ def pie_chart(request):
     labels = []
     data = []
     price = request.POST['price']
-    print( price )
     queryset = models.Cars.objects.filter( PriceEuro__gte=price )
     for car in queryset:
         labels.append( car.Brand )
@@ -84,11 +85,11 @@ def pie_chart1(request):
 
 
 def line_chart1(request):
-    labels = []
+    labels = [] #list
     data = []
     queryset = models.Cars.objects.order_by( '-Brand', 'Efficiency_WhKm' ).distinct( 'Brand' )[:10]
     for car in queryset:
-        labels.append( car.Brand )
+        labels.append( car.Brand ) ##add
         data.append( car.Efficiency_WhKm )
 
     return render( request, 'line_plot1.html', {
