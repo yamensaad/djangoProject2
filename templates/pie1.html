@@ -20,7 +20,7 @@
 <h1 style="font-family: Florence, cursive; ; color: blue; margin-top: 10px" class="text-center">the visualization of  TopSpeed Cars </h1>
 <a id="div" style="background-color: green" href="/"  class="btn btn-info pull-right" role="button">Back</a>
 
-<div id="container" style="width: 60%;">
+<div id="container" style="width: 40%;">
     <canvas id="pie-chart"></canvas>
   </div>
 
@@ -28,14 +28,14 @@
  <script>
 
     var config = {
-      type: 'pie',
+      type: 'radar',
       data: {
         datasets: [{
           data: {{ data|safe }},
           backgroundColor: [
             '#40ff00', '#ff0000', '#ff8000', '#0000ff', '#D3D3D3' ,'#ff8000' ,'#66b3ff' ,'#afb3b6', '#000d1a'
           ],
-          label: 'Selling_Price'
+          label: 'Top_speed'
         }],
         labels: {{ labels|safe }}
       },
