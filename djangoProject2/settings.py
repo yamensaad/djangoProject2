@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import dj_database_url
 import os
 from pathlib import Path
 
@@ -20,6 +21,7 @@ BASE_DIR = Path( __file__ ).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-fhg7c3)ju!+qz6c*hw*)moag+pa!nwlw(dr4#3or*)!*s5_i#n'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cars',
+    'heroku config:set SECRET_KEY=secretkey',
 ]
 
 MIDDLEWARE = [
@@ -85,9 +88,11 @@ DATABASES = {
         'PASSWORD': 'yamen',
         'HOST': 'localhost',
         'POST': '',
+
     }
 }
-
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
