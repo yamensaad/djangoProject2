@@ -1,1 +1,1 @@
-web: gunicorn cars:app
+web: gunicorn app:app
