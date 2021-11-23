@@ -1,1 +1,2 @@
-web: gunicorn app:manage
+web: gunicorn --preload app:manage
+
