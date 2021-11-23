@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-fhg7c3)ju!+qz6c*hw*)moag+pa!nwlw(dr4#3or*)!*s5_i#n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['data-visualization-djnago.herokuapp.com']
 
 STATICFILES_DIRS = [
     "D:\djangoProject2\static"
