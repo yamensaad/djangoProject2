@@ -1,4 +1,1 @@
-
-web: gunicorn manage:app --preload
-
-
+web: gunicorn cars:app
