@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path( __file__ ).resolve().parent.parent
@@ -26,7 +25,7 @@ SECRET_KEY = 'django-insecure-fhg7c3)ju!+qz6c*hw*)moag+pa!nwlw(dr4#3or*)!*s5_i#n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['data-visualization-djnago.herokuapp.com']
+ALLOWED_HOSTS = []
 
 STATICFILES_DIRS = [
     "D:\djangoProject2\static"
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cars',
-
 ]
 
 MIDDLEWARE = [
@@ -83,13 +81,15 @@ WSGI_APPLICATION = 'djangoProject2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9nkk2dvf6s7mn',
-        'USER': 'dswatbwkhlxice',
-        'PASSWORD': '921d7b9cec41cf84474c0a2a68dc0a6e7d16f5176735b27dbeb5bd3c58634649',
-        'HOST': 'ec2-3-248-87-6.eu-west-1.compute.amazonaws.com',
+        'NAME': 'cars',
+        'USER': 'postgres',
+        'PASSWORD': 'yamen',
+        'HOST': 'localhost',
         'POST': '',
 
     }
+
+
 }
 import dj_database_url
 
